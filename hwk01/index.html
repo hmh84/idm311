@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/main.js" defer></script>
+    <title>IDM 331 - HWK01 - Hunter Hampton</title>
+</head>
+
+<body>
+    <header>
+        <h1>Updated Avatar Finder for VR-Chat</h1>
+        <p>by Hunter Hampton</p>
+    </header>
+    <main>
+        <section>
+            <p>On the Oculus Quest 2 there's a game called VR-Chat, an online virtual world platform that allows users
+                to interact with others with user-created 3D character models (aka Avatars) and worlds.</p>
+        </section>
+        <section>
+            <h2>Current Experience</h2>
+            <p>A problem I found with this game, which you will see below, is the experience of selecting an avatar. The
+                issue is that upon creating an account, the first thing user is given the option to explore are these
+                "Avatar Worlds", which are game maps containing various player models for you to choose from.</p>
+            <p>While at first this seems like a great way to introduce players to the game, I actually found it quite
+                tedious, as you must endure walking through a large map of player models in a line to browse your
+                options. It took me roughly 15 minutes to tour the entire map, and being a task and not the focus of the
+                game itself, the experience of browsing by walking, turning, and rotating in a VR environment becomes
+                nauseating for less-experienced players like myself.</p>
+            <p>Here's an aerial view of an avatar map, the red dashed lines represent the paths the user must take to
+                see all of the avatars.</p>
+            <img src="./assets/world-1-aerial.png" alt="Avatar World 1 Aerial View">
+            <div class="caption">Avatar World 1 Aerial View (Photo from <a
+                    href="https://www.polygonalmind.com/blog-posts/optimizing-vrchat-worlds-collision-debugging"
+                    target="_blank">polygonalmind.com</a>)
+            </div>
+            <img src="./assets/world-1-walking.jpg" alt="Avatar World 1 Walking View">
+            <div class="caption">Avatar World 1 Walking View</div>
+            <p>What the game DOES have is a menu for changing to your favorited avatars, however, no all-encompassing
+                gallery.</p>
+            <img src="./assets/world-1-menu.jpg" alt="Avatar Menu View">
+            <div class="caption">Avatar Menu View</div>
+            <p>And here's an example of another Avatar World.</p>
+            <img src="./assets/world-2.jpg" alt="World 2 Walking View">
+            <div class="caption">Avatar World 2 Walking View</div>
+        </section>
+        <section>
+            <h2>Updated Experience</h2>
+            <h3>Full Size: WebGL / Oculus VR (1920x1080)</h3>
+            <p>The aim of this interface is to make changing avatars a quicker experience that isn't so physically
+                straining on less experienced VR users.</p>
+            <p>In my design, users could access the avatar changer from their user settings window. You would be able to
+                search by name, as well as filter by category. Users can swipe through a 4x3 grid.</p>
+            <img class="flip" data-size="full" src="./assets/full-size-all.png" alt="Updated UI Mockups">
+            <div>
+                <p>Mockup guide setting:</p>
+                <div data-size="full" class="controls">
+                    <button class="selected" data-size="full" value="all">All Guides</button>
+                    <button data-size="full" value="bare">Just the mockup</button>
+                    <button data-size="full" value="grid">Angular grid</button>
+                    <button data-size="full" value="eye">Eye comfort zone</button>
+                </div>
+            </div>
+            <h3>Mobile Size: Google Cardboard (812x457)</h3>
+            <p>In the mobile screen size, the avatar browser would shrink to a 3x2 grid.</p>
+            <img class="flip" data-size="mobile" src="./assets/mobile-size-all.png" alt="Updated UI Mockups">
+            <div>
+                <p>Mockup guide setting:</p>
+                <div data-size="mobile" class="controls">
+                    <button class="selected" data-size="mobile" value="all">All Guides</button>
+                    <button data-size="mobile" value="bare">Just the mockup</button>
+                    <button data-size="mobile" value="grid">Angular grid</button>
+                    <button data-size="mobile" value="eye">Eye comfort zone</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -48,6 +48,30 @@ section:last-of-type {
 	margin-bottom: 0;
 }
 
+section.highlight {
+	background-color: purple;
+	border-radius: 0.5rem;
+	padding: 1rem 1.5rem;
+}
+
+section.highlight > * {
+	margin: 0;
+	color: white;
+}
+
+section.highlight a {
+	background-color: black;
+	text-decoration: none;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+}
+
+section.highlight a,
+section.highlight a:active,
+section.highlight a:visited {
+	color: white !important;
+}
+
 img {
 	width: 100%;
 	max-height: 85vh;

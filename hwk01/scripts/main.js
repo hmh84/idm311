@@ -8,7 +8,7 @@ buttons.forEach(button => {
         const value = button.value;
 
         const img = document.querySelector(`.flip[data-size="${size}"]`);
-        img.setAttribute('src', `./assets/${size}-size-${value}.png`);
+        img.setAttribute('src', `./assets/${size}-size-${value}.jpg`);
 
         document.querySelector(`.selected[data-size="${size}"]`).classList.remove('selected');
         button.classList.add('selected');

@@ -26,6 +26,5 @@ section {
 
 iframe {
 	width: 100%;
-	max-height: 90vh;
-	flex: 1;
+	height: 90vh;
 }

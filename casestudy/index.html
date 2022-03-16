@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>IDM 311 Case Study</title>
+</head>
+
+<body>
+    <main>
+        <h1>Case Study for IDM 311</h1>
+        <p style="text-align: center;">Hunter Hampton</p>
+
+        <h2>Overview</h2>
+
+        <p>
+            My 2022 Winter quarter at Drexel I took IDM 311 - UI Design for Immersive Media, a class to introduce us to
+            and build interfaces in Unity.
+        </p>
+
+        <p>
+            The goal of this final project was to create multiple user friendly UI and environment interactions in a 3D
+            platform.
+        </p>
+
+        <a href="../final/">Click here to try the 3D experience</a>
+
+        <h2>Process</h2>
+
+        <p>
+            Leading up to the project, we spent the first few weeks completing official Unity Learn tutorials covering
+            the basics of the editor, developing environments, and scripting.
+        </p>
+
+        <ol>
+            <li>
+                I found an initial environment that was free and could be molded to fit the requirements.
+            </li>
+
+            <p class="indent">
+                - For this I imported the scene and inspected the component hierarchy to see what could be manipulated
+                such as the pond water.
+            </p>
+
+            <li>
+                Ideated what UI and environment controls I would make
+            </li>
+            <li>
+                Proposed the project to the acting client (our professor)
+            </li>
+
+            <h3>After approval…</h3>
+
+            <li>
+                <p class="group-title">Week 1:</p>
+                <ul>
+                    <li>
+                        Moved all the scene's objects into position for the interactions
+                    </li>
+                    <li>
+                        Setup boundaries using invisible plains to make sure the user cannot fall off
+                    </li>
+                    <li>
+                        Created initial interactions: When clicking the blue icon stone, the pond would drain or
+                        fill. When clicking the mountains, they would all raise or fall. These both had Problem #1
+                        listed below.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="group-title">Week 2:</p>
+                <ul>
+                    <li>
+                        Fixed Problem #1 & #2
+                    </li>
+                    <li>
+                        Added torch prefabs and the click interaction to toggle light emission
+                    </li>
+                    <li>
+                        Added background music
+                    </li>
+                    <li>
+                        Created settings menu UI with background music muting toggle
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="group-title">Week 3:</p>
+                <ul>
+                    <li>
+                        Fixed Problem #3
+                    </li>
+                    <li>
+                        Styled the settings menu
+                    </li>
+                    <li>
+                        Perfected the “Auto Rotate” and toggle functionality, even having the slider handle match the
+                        sun's current position in the sky.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Problems</h2>
+
+        <ol>
+            <li>
+                My very first problem I ran into immediately was changing a GameObject's transform property, if it's not
+                in the top level of scene hierarchy, it will likely not move where you expect it to.
+            </li>
+
+            <p class="solution">
+                The solution was researching why this would be happening on Unity's public forms. I discovered that a
+                nested GameObject position is relative to the parent object, therefore you should use the localPosition
+                property instead of the position property.
+            </p>
+
+            <li>
+                Tracking Recast hits using hard coded object names was inefficient, this became problematic once I
+                started re-naming objects, the recast hit would never be detected, failing silently because it didn't
+                produce an error, Unity just thought the object I clicked didn't match the name I entered.
+            </li>
+
+            <p class="solution">
+                The solution was to not hard code the GameObject names in the hit detection, but to use the the “name”
+                property on the public variables.
+            </p>
+
+            <li>
+                The basic Raycasting mouse click test passes through interfaces. This was a problem because one of the
+                main environment interactions is clicking the mountains, which the settings menu is placed in front of,
+                so a single click was both toggling checkboxes and raising/lowering the mountains.
+            </li>
+
+            <p class="solution">
+                The solution was to limit the Raycast physics check to only listen for hits on a specific Unity layer, a
+                new layer I made only for intractable objects.
+            </p>
+        </ol>
+
+        <h2>Deliverables</h2>
+
+        <ol>
+            <p class="group-title">3 UI Controls:</p>
+
+            <li>
+                A “Auto Rotate” checkbox toggle to play and pause the sun's rotation.
+            </li>
+
+            <li>
+                When the “Auto Rotate” checkbox is disabled, a range slider appears allowing manual adjustment of
+                the
+                sun's position in the sky to affect lighting conditions.
+            </li>
+
+            <li>
+                Checkbox toggle to mute/un-mute background music.
+            </li>
+
+            <p class="group-title">3 GameObject interactions</p>
+
+            <li>
+                Clicking on the first blue icon stone will drain or fill the pond
+            </li>
+
+            <li>
+                When the “Auto Rotate” checkbox is disabled, a range slider appears allowing manual adjustment of
+                the
+                sun's position in the sky to affect lighting conditions.
+            </li>
+
+            <li>
+                Checkbox toggle to mute/un-mute background music.
+            </li>
+        </ol>
+
+        <h2>Outcome & Reflection</h2>
+
+        <ul>
+            <p class="group-title">Learned:</p>
+            <li>Use rigid body and mesh/box colliders</li>
+            <li>Write Unity scrips and increase knowledge with using C# class based coding</li>
+            <li>Accept keyboard and mouse input, including the use of Raycasting</li>
+            <li>Manipulate gravity and velocity for movement and jumping</li>
+            <li>Principals of interface design in a game environment</li>
+            <li>Smooth object transforming</li>
+            <li>Make basic materials</li>
+        </ul>
+
+        <p>
+            If I had more time I would have simply put more intractable features in like a skybox with stars and
+            constellations and solved a bug with Raycasting where if the ray of your pointer passes through
+            multiple clickable GameObjects from different scripts, it will trigger both. And how to organize
+            scripts and game logic better, including how to run scripts that aren't attached to a game object as
+            a component.
+        </p>
+
+        <p>
+            Overall I am satisfied with what I was able to learn and accomplish in the given time, having no
+            experience with Unity prior to this project.
+        </p>
+
+        <a class="button" href="../final/">Click here to try the 3D experience</a>
+    </main>
+</body>
+
+</html>
